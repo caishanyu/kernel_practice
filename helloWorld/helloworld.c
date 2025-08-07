@@ -1,8 +1,13 @@
 #include <linux/module.h>
 
+static int num = 5;
+
+module_param(num, int, S_IRUGO);    // num参数可指定
+
 static int __init hello_init(void)
 {
     pr_info("Hello world init\n");  // printk(KERN_INFO, xxx)的简写，推荐这种用法
+    pr_info("num = %d\n", num);
     return 0;
 }
 
