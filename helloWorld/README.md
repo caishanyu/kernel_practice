@@ -8,6 +8,7 @@
 - [Makefile](#makefile)
 - [加载卸载模块](#加载卸载模块)
 - [模块参数](#模块参数)
+- [计时](#计时)
 
 ## 基础知识
 
@@ -52,3 +53,16 @@ sudo insmod helloworld.ko num=10
 ```
 
 查看日志可以看到`num`为我们指定的10
+
+## 计时
+
+书中提到的`do_gettimeofday`在高版本的linux内核中已经移除了，这里使用`ktime_get_real_ts64`实现计时
+
+需要包含`<linux/timekeeping.h>`，具体查看代码
+
+```c
+struct timespec64{
+    time64_t    tv_sec;     /* 秒数，64位有符号整数 */
+    long        tv_nsec;    /* 纳秒数，范围在0到999,999,999之间 */
+};
+```
