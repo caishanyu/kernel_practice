@@ -18,7 +18,7 @@ static void __exit hello_exit(void)
 {
     struct timespec64 end_time;
     ktime_get_real_ts64(&end_time);
-    pr_info("Hello world exit, running total time: %ld seconds\n",
+    pr_info("Hello world exit, running total time: %lld seconds\n",
         end_time.tv_sec - start_time.tv_sec);
 }
 

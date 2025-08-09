@@ -1,0 +1,1 @@
+obj-m += helloworld.o		# 生成模块helloworld.ko，必须和helloworld.c文件名字严格匹配
