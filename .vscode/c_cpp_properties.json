@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "/home/cai/share/rpi-linux/linux-rpi-6.12.y/include",
+        // 关键：添加ARM64架构的asm目录
+        "/home/cai/share/rpi-linux/linux-rpi-6.12.y/arch/arm64/include",
+        "/home/cai/share/rpi-linux/linux-rpi-6.12.y/arch/arm64/include/asm",
+        "/home/cai/share/rpi-linux/linux-rpi-6.12.y/arch/arm64/include/generated",
+        "/home/cai/share/rpi-linux/linux-rpi-6.12.y/include/generated",
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "__KERNEL__",
+        "MODULE",
+        "CONFIG_MODULE",
+        "__ARM64__",  // 明确声明ARM64架构
+        "KERNEL_VERSION(6, 12, 25)"
+      ],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-gcc-arm64"
+    }
+  ],
+  "version": 4
+}
