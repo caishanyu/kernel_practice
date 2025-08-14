@@ -1,5 +1,5 @@
 KERNELDIR ?= /lib/modules/$(shell uname -r)/build  # 内核源码路径
-MODULES := helloWorld
+MODULES := helloWorld chrDev
 
 all: $(MODULES)
 
